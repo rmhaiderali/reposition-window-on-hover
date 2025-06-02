@@ -1,0 +1,12 @@
+{
+  "name": "reposition-window-on-hover",
+  "main": "index.js",
+  "type": "module",
+  "bin": {
+    "serve-static-cli": "./index.js"
+  },
+  "prettier": {
+    "semi": false,
+    "singleQuote": false
+  }
+}
