@@ -43,7 +43,7 @@ const interval = +process.argv[3] || 500
 const windowSize = { w: 500, h: 385 }
 Object.assign(windowSize, eval("(" + (process.argv[4] || "{}") + ")"))
 
-const windowOffset = { t: 1, l: 8, r: 8, b: 8 }
+const windowOffset = { t: -1, l: -8, r: 8, b: 8 }
 Object.assign(windowOffset, eval("(" + (process.argv[5] || "{}") + ")"))
 
 let isTop = false
@@ -53,11 +53,11 @@ function updatePosition() {
     console.log("Setting position to " + (isTop ? "top-left" : "bottom-right"))
 
     const x = isTop
-      ? -windowOffset.l
+      ? windowOffset.l
       : screenSize.w - windowSize.w + windowOffset.r
 
     const y = isTop
-      ? -windowOffset.t
+      ? windowOffset.t
       : screenSize.h - windowSize.h + windowOffset.b
 
     exec(
@@ -99,6 +99,7 @@ async function updateLoop() {
     if (
       cursorPosAndCtrlKey.x > screenSize.w - windowSize.w &&
       cursorPosAndCtrlKey.y > screenSize.h - windowSize.h &&
+      cursorPosAndCtrlKey.x < screenSize.w &&
       cursorPosAndCtrlKey.y < screenSize.h
     ) {
       isTop = true
