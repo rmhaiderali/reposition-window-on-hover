@@ -7,7 +7,7 @@ npx github:rmhaiderali/reposition-window-on-hover <window-title> <interval> <win
 Default values
 
 ```bash
-npx github:rmhaiderali/serve-static-cli "VLC media player" 500 "{}" "{}"
+npx github:rmhaiderali/reposition-window-on-hover "VLC media player" 500 "{}" "{}"
 ```
 
 | Options       | Discription                                      | Type                                 | Default                        |
